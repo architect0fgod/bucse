@@ -1,0 +1,42 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q4. Design and implement a BCD-to-Excess-3 Code Converter
+
+a) Truth Table (BCD A B C D -> Excess-3 W X Y Z)
+
+Inputs A,B,C,D (A = MSB). Outputs W,X,Y,Z (W = MSB).
+Invalid BCD codes 1010 - 1111 are don't-care conditions.
+
+ Decimal |  BCD A B C D  |  Excess-3 W X Y Z
+---------+---------------+------------------
+   0     |  0  0  0  0   |   0  0  1  1
+   1     |  0  0  0  1   |   0  1  0  0
+   2     |  0  0  1  0   |   0  1  0  1
+   3     |  0  0  1  1   |   0  1  1  0
+   4     |  0  1  0  0   |   0  1  1  1
+   5     |  0  1  0  1   |   1  0  0  0
+   6     |  0  1  1  0   |   1  0  0  1
+   7     |  0  1  1  1   |   1  0  1  0
+   8     |  1  0  0  0   |   1  0  1  1
+   9     |  1  0  0  1   |   1  1  0  0
+
+b) Boolean Expressions (K-map minimisation, don't cares = X)
+
+Let  S = C + D   (s = C OR D)
+     P = C . D   (P = C AND D)
+
+  W (w) = A + B(C + D)        = A + B.C + B.D
+  X (x) = B'.C + B'.D + B.C'.D'    (B XOR S, where S = C + D)
+  Y (y) = C'D' + C.D          = C XNOR D
+  Z (z) = D'
+
+c) Logic Gate Diagram
+(Logic diagram omitted as per instruction - "leave the diagrams")
+
+d) Verilog HDL Implementation
+See q4_bcd2ex3.v  - module question4, continuous assignments
+
+e) Testbench and Verification
+See q4_bcd2ex3_tb.v  - module tb_question4, applies all 10 valid
+BCD inputs (0..9). Simulation waveform: dump.vcd (open with GTKWave)

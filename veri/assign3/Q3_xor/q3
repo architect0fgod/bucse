@@ -1,0 +1,109 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x557880edb260 .scope module, "tb_q3_circuit" "tb_q3_circuit" 2 5;
+ .timescale 0 0;
+v0x557880ef6910_0 .var "a", 0 0;
+v0x557880ef69b0_0 .var "b", 0 0;
+v0x557880ef6a70_0 .net "f", 0 0, L_0x557880ef6f00;  1 drivers
+S_0x557880edb3f0 .scope module, "uut" "q3_circuit" 2 10, 3 28 0, S_0x557880edb260;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "f";
+v0x557880ef6240_0 .net "a", 0 0, v0x557880ef6910_0;  1 drivers
+v0x557880ef6330_0 .net "an", 0 0, L_0x557880ef6b60;  1 drivers
+v0x557880ef6440_0 .net "b", 0 0, v0x557880ef69b0_0;  1 drivers
+v0x557880ef6530_0 .net "bn", 0 0, L_0x557880ef6bd0;  1 drivers
+v0x557880ef6620_0 .net "f", 0 0, L_0x557880ef6f00;  alias, 1 drivers
+v0x557880ef6710_0 .net "t1", 0 0, L_0x557880ef6c80;  1 drivers
+v0x557880ef6800_0 .net "t2", 0 0, L_0x557880ef6dc0;  1 drivers
+S_0x557880edc140 .scope module, "u1" "not_gate" 3 35, 3 5 0, S_0x557880edb3f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0x557880ef6b60 .functor NOT 1, v0x557880ef6910_0, C4<0>, C4<0>, C4<0>;
+v0x557880edc370_0 .net "a", 0 0, v0x557880ef6910_0;  alias, 1 drivers
+v0x557880ef4eb0_0 .net "y", 0 0, L_0x557880ef6b60;  alias, 1 drivers
+S_0x557880ef4fd0 .scope module, "u2" "not_gate" 3 36, 3 5 0, S_0x557880edb3f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0x557880ef6bd0 .functor NOT 1, v0x557880ef69b0_0, C4<0>, C4<0>, C4<0>;
+v0x557880ef5200_0 .net "a", 0 0, v0x557880ef69b0_0;  alias, 1 drivers
+v0x557880ef52e0_0 .net "y", 0 0, L_0x557880ef6bd0;  alias, 1 drivers
+S_0x557880ef5400 .scope module, "u3" "and_g2" 3 37, 3 12 0, S_0x557880edb3f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0x557880ef6c80 .functor AND 1, L_0x557880ef6b60, v0x557880ef69b0_0, C4<1>, C4<1>;
+v0x557880ef5650_0 .net "a", 0 0, L_0x557880ef6b60;  alias, 1 drivers
+v0x557880ef56f0_0 .net "b", 0 0, v0x557880ef69b0_0;  alias, 1 drivers
+v0x557880ef5790_0 .net "y", 0 0, L_0x557880ef6c80;  alias, 1 drivers
+S_0x557880ef5870 .scope module, "u4" "and_g2" 3 38, 3 12 0, S_0x557880edb3f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0x557880ef6dc0 .functor AND 1, v0x557880ef6910_0, L_0x557880ef6bd0, C4<1>, C4<1>;
+v0x557880ef5ac0_0 .net "a", 0 0, v0x557880ef6910_0;  alias, 1 drivers
+v0x557880ef5b80_0 .net "b", 0 0, L_0x557880ef6bd0;  alias, 1 drivers
+v0x557880ef5c20_0 .net "y", 0 0, L_0x557880ef6dc0;  alias, 1 drivers
+S_0x557880ef5d00 .scope module, "u5" "or_g2" 3 39, 3 20 0, S_0x557880edb3f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0x557880ef6f00 .functor OR 1, L_0x557880ef6c80, L_0x557880ef6dc0, C4<0>, C4<0>;
+v0x557880ef5fa0_0 .net "a", 0 0, L_0x557880ef6c80;  alias, 1 drivers
+v0x557880ef6060_0 .net "b", 0 0, L_0x557880ef6dc0;  alias, 1 drivers
+v0x557880ef6130_0 .net "y", 0 0, L_0x557880ef6f00;  alias, 1 drivers
+    .scope S_0x557880edb260;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "q3_waveform.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x557880edb260 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x557880edb260;
+T_1 ;
+    %vpi_call 2 18 "$monitor", "Time=%0t | A=%b B=%b | F=%b", $time, v0x557880ef6910_0, v0x557880ef69b0_0, v0x557880ef6a70_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x557880edb260;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557880ef6910_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557880ef69b0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557880ef6910_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557880ef69b0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557880ef6910_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557880ef69b0_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557880ef6910_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557880ef69b0_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_q3.v";
+    "q3_circuit.v";

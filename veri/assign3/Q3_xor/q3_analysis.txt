@@ -1,0 +1,18 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q3. F(A,B) = A'B + AB'
+
+This function is the EXCLUSIVE-OR (XOR) gate.
+A'B is true only when A=0 and B=1.
+AB' is true only when A=1 and B=0.
+So output is 1 only when the two inputs are different.
+
+Truth Table:
+  A  B  |  A'B  |  AB'  |  F
+  0  0  |  0    |  0    |  0
+  0  1  |  1    |  0    |  1
+  1  0  |  0    |  1    |  1
+  1  1  |  0    |  0    |  0
+
+F = A xor B

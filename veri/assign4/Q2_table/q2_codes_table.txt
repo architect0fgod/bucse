@@ -1,0 +1,26 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q2. Equivalent Binary, BCD, Excess-3 and Gray code representations
+    for decimal digits 0 to 9
+
+ Decimal | Binary |  BCD    | Excess-3 |  Gray code
+  Digit  | (B3B2B1B0)|      |          |
+---------+---------+---------+----------+------------
+    0    |  0000   | 0000    |  0011    |   0000
+    1    |  0001   | 0001    |  0100    |   0001
+    2    |  0010   | 0010    |  0101    |   0011
+    3    |  0011   | 0011    |  0110    |   0010
+    4    |  0100   | 0100    |  0111    |   0110
+    5    |  0101   | 0101    |  1000    |   0111
+    6    |  0110   |  0110   |  1001    |   0101
+    7    |  0111   |  0111   |  1010    |   0100
+    8    |  1000   |  1000   |  1011    |   1100
+    9    |  1001   |  1001   |  1100    |   1101
+
+Notes:
+  1. Binary  : the natural 4-bit binary value of the decimal digit.
+  2. BCD     : same as the 4-bit binary value (1 group per digit).
+  3. Excess-3: BCD + 3  (0011 added to the BCD code).
+  4. Gray    : successive codes differ in exactly one bit.
+     Conversion   : G3 = B3, G2 = B3^B2, G1 = B2^B1, G0 = B1^B0

@@ -1,0 +1,39 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q1. F = (A + B)C using NAND gates only
+
+Logic Design:
+Goal: build OR and AND using only NAND gates.
+
+NAND as NOT:  tie both inputs together => NOT A = NAND(A, A)
+
+NAND as inverter used for NOT A and NOT B:
+  gate g1 = NAND(A, A)  = A'
+  gate g2 = NAND(B, B)  = B'
+
+OR gate from NAND:
+  NAND(A', B') = (A'.B')' = A + B
+  gate g3 = NAND(g1, g2) = A + B
+
+AND gate from NAND (NAND followed by inverter):
+  gate g4 = NAND((A+B), C) = ((A+B).C)'
+  gate g5 = NAND(g4, g4)   = (A+B).C   -> F
+
+Gate connections:
+  g1 = NAND(A,A)   -> A'
+  g2 = NAND(B,B)   -> B'
+  g3 = NAND(g1,g2) -> A + B
+  g4 = NAND(g3,C)  -> ((A+B).C)'
+  g5 = NAND(g4,g4) -> F = (A+B)C
+
+Truth Table:
+  A  B  C  |  A+B  |  F
+  0  0  0  |  0    |  0
+  0  0  1  |  0    |  0
+  0  1  0  |  1    |  0
+  0  1  1  |  1    |  1
+  1  0  0  |  1    |  0
+  1  0  1  |  1    |  1
+  1  1  0  |  1    |  0
+  1  1  1  |  1    |  1

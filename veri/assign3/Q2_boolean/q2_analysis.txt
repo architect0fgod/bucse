@@ -1,0 +1,22 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q2. F = AB + A'B + AC
+
+The expression has three product terms:
+  term1 = AB
+  term2 = A'B
+  term3 = AC
+
+Circuit makes each product with an AND gate, then ORs them together.
+
+Truth Table:
+  A  B  C  |  AB  |  A'B  |  AC  |  F
+  0  0  0  |  0   |  0    |  0   |  0
+  0  0  1  |  0   |  0    |  0   |  0
+  0  1  0  |  0   |  1    |  0   |  1
+  0  1  1  |  0   |  1    |  0   |  1
+  1  0  0  |  0   |  0    |  0   |  0
+  1  0  1  |  0   |  0    |  1   |  1
+  1  1  0  |  1   |  0    |  0   |  1
+  1  1  1  |  1   |  0    |  1   |  1

@@ -1,0 +1,99 @@
+$date
+	Wed Sep 16 21:53:11 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_q1_circuit $end
+$var wire 1 ! f $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ c $end
+$scope module uut $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ c $end
+$var wire 1 % g4 $end
+$var wire 1 & g3 $end
+$var wire 1 ' g2 $end
+$var wire 1 ( g1 $end
+$var wire 1 ! f $end
+$scope module u1 $end
+$var wire 1 " a $end
+$var wire 1 " b $end
+$var wire 1 ( y $end
+$upscope $end
+$scope module u2 $end
+$var wire 1 # a $end
+$var wire 1 # b $end
+$var wire 1 ' y $end
+$upscope $end
+$scope module u3 $end
+$var wire 1 ( a $end
+$var wire 1 ' b $end
+$var wire 1 & y $end
+$upscope $end
+$scope module u4 $end
+$var wire 1 & a $end
+$var wire 1 $ b $end
+$var wire 1 % y $end
+$upscope $end
+$scope module u5 $end
+$var wire 1 % a $end
+$var wire 1 % b $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1(
+1'
+0&
+1%
+0$
+0#
+0"
+0!
+$end
+#5
+1$
+#10
+1&
+0'
+0$
+1#
+#15
+1!
+0%
+1$
+#20
+0!
+1%
+1'
+0(
+0$
+0#
+1"
+#25
+1!
+0%
+1$
+#30
+0!
+1%
+0'
+0$
+1#
+#35
+1!
+0%
+1$
+#40

@@ -1,0 +1,41 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q1. Design and implement a 3-bit Binary-to-Excess-3 Code Converter
+
+a) Truth Table (3-bit Binary B[2:0] to 4-bit Excess-3 E[3:0])
+
+B2  B1  B0  |  Decimal  |  E3  E2  E1  E0
+-----------------------------------------
+0   0   0   |     0     |  0   0   1   1
+0   0   1   |     1     |  0   1   0   0
+0   1   0   |     2     |  0   1   0   1
+0   1   1   |     3     |  0   1   1   0
+1   0   0   |     4     |  0   1   1   1
+1   0   1   |     5     |  1   0   0   0
+1   1   0   |     6     |  1   0   0   1
+1   1   1   |     7     |  1   0   1   0
+
+Excess-3 code = Binary value + 3 (0011), so each output nibble is the
+3-bit binary input incremented by the constant 3.
+
+b) Boolean Expressions (K-map minimisation, A = B2, B = B1, C = B0)
+
+  E3 (d) = A.B + A.C              = A(B + C)
+  E2 (e) = A'.B + A'.C + A.B'.C'  (minterms 1, 2, 3, 4)
+  E1 (f) = B.C + B'.C'            (B1 XNOR B0)
+  E0 (g) = C'
+
+  (Equivalent XOR/carry form from adding 0011:
+     E0 = B0',  E1 = B1 XNOR B0,
+     E2 = B2 XOR (B1+B0),  E3 = B2(B1+B0) )
+
+c) Logic Gate Diagram
+(Logic diagram omitted as per instruction - "leave the diagrams")
+
+d) Verilog HDL Implementation
+See q1_b2ex3.v  - module question1, continuous assignments
+
+e) Testbench and Verification
+See q1_b2ex3_tb.v  - module tb_question1, applies all 8 input
+combinations. Simulation waveform: dump.vcd (open with GTKWave)

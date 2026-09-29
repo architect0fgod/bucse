@@ -1,0 +1,36 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q5. Design and implement a 3-bit Binary-to-Gray Code Converter
+
+a) Truth Table (3-bit Binary B2 B1 B0 -> Gray G2 G1 G0)
+
+B2  B1  B0  |  Decimal  |  G2  G1  G0
+-------------------------------------
+0   0   0   |     0     |  0   0   0
+0   0   1   |     1     |  0   0   1
+0   1   0   |     2     |  0   1   1
+0   1   1   |     3     |  0   1   0
+1   0   0   |     4     |  1   1   0
+1   0   1   |     5     |  1   1   1
+1   1   0   |     6     |  1   0   1
+1   1   1   |     7     |  1   0   0
+
+b) Boolean Expressions (Binary-to-Gray rule)
+
+G2 = B2
+G1 = B2 XOR B1
+G0 = B1 XOR B0
+
+(Each gray bit is the XOR of the corresponding binary bit with the
+ binary bit immediately to its left / more significant.)
+
+c) Logic Gate Diagram
+(Logic diagram omitted as per instruction - "leave the diagrams")
+
+d) Verilog HDL Implementation
+See q5_b2gray.v  - module question5, continuous assignments
+
+e) Testbench and Verification
+See q5_b2gray_tb.v  - module tb_question5, applies all 8 input
+combinations. Simulation waveform: dump.vcd (open with GTKWave)

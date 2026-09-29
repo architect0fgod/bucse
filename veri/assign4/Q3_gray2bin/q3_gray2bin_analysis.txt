@@ -1,0 +1,45 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q3. Design and implement a 4-bit Gray-to-Binary Code Converter
+
+a) Truth Table (Gray code G[3:0] -> Binary B[3:0])
+
+G3  G2  G1  G0  |  B3  B2  B1  B0
+---------------------------------
+0   0   0   0   |  0   0   0   0
+0   0   0   1   |  0   0   0   1
+0   0   1   0   |  0   0   1   1
+0   0   1   1   |  0   0   1   0
+0   1   0   0   |  0   1   1   1
+0   1   0   1   |  0   1   1   0
+0   1   1   0   |  0   1   0   0
+0   1   1   1   |  0   1   0   1
+1   0   0   0   |  1   1   1   1
+1   0   0   1   |  1   1   1   0
+1   0   1   0   |  1   1   0   0
+1   0   1   1   |  1   1   0   1
+1   1   0   0   |  1   0   0   0
+1   1   0   1   |  1   0   0   1
+1   1   1   0   |  1   0   1   1
+1   1   1   1   |  1   0   1   0
+
+b) Boolean Expressions
+
+B3 = G3
+B2 = G3 XOR G2
+B1 = G3 XOR G2 XOR G1
+B0 = G3 XOR G2 XOR G1 XOR G0
+
+(The binary bit Bk is the running XOR of gray bits from the MSB down
+ to bit k:  Bk = G3 ^ G2 ^ ... ^ Gk.)
+
+c) Logic Gate Diagram
+(Logic diagram omitted as per instruction - "leave the diagrams")
+
+d) Verilog HDL Implementation
+See q3_gray2bin.v  - module question3, continuous assignments
+
+e) Testbench and Verification
+See q3_gray2bin_tb.v  - module tb_question3, applies all 16 input
+combinations. Simulation waveform: dump.vcd (open with GTKWave)

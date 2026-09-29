@@ -1,0 +1,25 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q4. Absorption Law: A + AB = A
+
+a) Statement of the Law:
+   The Absorption Law states that ORing a variable with the AND of
+   itself and another variable simply gives back the first variable.
+     A + (A.B) = A
+   The term (A.B) adds no new information because A already covers it.
+
+b) Truth Table for both sides:
+
+  A  B  |  A  |  AB  |  A + AB
+  0  0  |  0  |  0   |  0
+  0  1  |  0  |  0   |  0
+  1  0  |  1  |  0   |  1
+  1  1  |  1  |  1   |  1
+
+   Column A and column A + AB are identical, so the law holds.
+
+c) Circuits:
+   Left side (A + AB): one AND gate makes AB,
+                        then one OR gate combines A and AB.
+   Right side (A):     just the input A passed straight to output.
