@@ -1,0 +1,33 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q4.
+
+The circuit has two NOR gates. Inputs A and B go into the first NOR gate.
+The output of the first NOR gate is R. Then R goes into both inputs of
+the second NOR gate. The final output is X.
+
+Let's find X step by step.
+
+First NOR gate:
+  R = NOR of A and B = NOT(A OR B)
+
+Second NOR gate:
+  Both inputs are R, so X = NOT(R OR R) = NOT(R)
+
+Substituting R:
+  X = NOT(NOT(A OR B)) = A OR B
+
+So the circuit gives X = A OR B.
+
+This means the circuit behaves like an OR gate.
+
+Truth Table:
+
+  A  B  |  R  |  X
+  0  0  |  1  |  0
+  0  1  |  0  |  1
+  1  0  |  0  |  1
+  1  1  |  0  |  1
+
+The output X matches the OR gate truth table.

@@ -1,0 +1,44 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q1. NAND and NOR Gates
+
+NAND Gate
+A NAND gate gives output 0 only when all inputs are 1.
+Otherwise the output is 1. It is basically AND followed by NOT.
+NAND is a universal gate.
+
+Boolean Expression: Y = (A.B)'
+
+Logic Diagram:
+        _______
+  A ---|       |
+       | NAND  |--- Y
+  B ---|_______|
+
+Truth Table:
+  A  B  |  Y
+  0  0  |  1
+  0  1  |  1
+  1  0  |  1
+  1  1  |  0
+
+NOR Gate
+A NOR gate gives output 1 only when all inputs are 0.
+Otherwise the output is 0. It is basically OR followed by NOT.
+NOR is also a universal gate.
+
+Boolean Expression: Y = (A+B)'
+
+Logic Diagram:
+        _______
+  A ---|       |
+       | NOR   |--- Y
+  B ---|_______|
+
+Truth Table:
+  A  B  |  Y
+  0  0  |  1
+  0  1  |  0
+  1  0  |  0
+  1  1  |  0

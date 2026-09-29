@@ -1,0 +1,81 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x557ca306e5c0 .scope module, "tb_nand_gate" "tb_nand_gate" 2 14;
+ .timescale 0 0;
+v0x557ca3085320_0 .var "a", 0 0;
+v0x557ca3085410_0 .var "b", 0 0;
+v0x557ca3085520_0 .net "y", 0 0, L_0x557ca3085680;  1 drivers
+S_0x557ca306e750 .scope module, "uut" "nand_gate" 2 24, 3 31 0, S_0x557ca306e5c0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+v0x557ca3085020_0 .net "a", 0 0, v0x557ca3085320_0;  1 drivers
+v0x557ca30850c0_0 .net "and_out", 0 0, L_0x557ca3085610;  1 drivers
+v0x557ca30851b0_0 .net "b", 0 0, v0x557ca3085410_0;  1 drivers
+v0x557ca3085250_0 .net "y", 0 0, L_0x557ca3085680;  alias, 1 drivers
+S_0x557ca3070840 .scope module, "u1" "and_gate" 3 40, 3 9 0, S_0x557ca306e750;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0x557ca3085610 .functor AND 1, v0x557ca3085320_0, v0x557ca3085410_0, C4<1>, C4<1>;
+v0x557ca3070a90_0 .net "a", 0 0, v0x557ca3085320_0;  alias, 1 drivers
+v0x557ca3084a50_0 .net "b", 0 0, v0x557ca3085410_0;  alias, 1 drivers
+v0x557ca3084b10_0 .net "y", 0 0, L_0x557ca3085610;  alias, 1 drivers
+S_0x557ca3084c30 .scope module, "u2" "not_gate" 3 41, 3 19 0, S_0x557ca306e750;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0x557ca3085680 .functor NOT 1, L_0x557ca3085610, C4<0>, C4<0>, C4<0>;
+v0x557ca3084e60_0 .net "a", 0 0, L_0x557ca3085610;  alias, 1 drivers
+v0x557ca3084f20_0 .net "y", 0 0, L_0x557ca3085680;  alias, 1 drivers
+    .scope S_0x557ca306e5c0;
+T_0 ;
+    %vpi_call 2 32 "$dumpfile", "nand_waveform.vcd" {0 0 0};
+    %vpi_call 2 33 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x557ca306e5c0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x557ca306e5c0;
+T_1 ;
+    %vpi_call 2 38 "$monitor", "Time=%0t | A=%b B=%b | Y=%b", $time, v0x557ca3085320_0, v0x557ca3085410_0, v0x557ca3085520_0 {0 0 0};
+    %end;
+    .thread T_1;
+    .scope S_0x557ca306e5c0;
+T_2 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557ca3085320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557ca3085410_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557ca3085320_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557ca3085410_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557ca3085320_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x557ca3085410_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557ca3085320_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x557ca3085410_0, 0, 1;
+    %delay 5, 0;
+    %vpi_call 2 55 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb_nand.v";
+    "nand_gate.v";

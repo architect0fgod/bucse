@@ -1,0 +1,26 @@
+Name    : Jayant
+Roll No : <Your Roll No>
+
+Q5.
+
+The circuit has one NOR gate. Input A is connected to both inputs of
+the NOR gate. The output is X.
+
+Let's find X.
+
+  X = NOR of A and A = NOT(A OR A) = NOT(A)
+
+So the output is just the inverse of A.
+
+When A = 0, X = 1
+When A = 1, X = 0
+
+This means the circuit behaves like a NOT gate.
+
+Truth Table:
+
+  A  |  X
+  0  |  1
+  1  |  0
+
+The output X matches the NOT gate truth table.
